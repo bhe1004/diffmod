@@ -1,0 +1,38 @@
+# @package _global_
+defaults:
+  - test_domain_base
+env:
+  single_object_scene:
+    mesh_gen:
+      vis_file: '/tmp/docker/domain/tight-cab/tight-cab.obj'
+      col_file: '/tmp/docker/domain/tight-cab/tight-cab-coacd.obj'
+      env_cloud: '/tmp/docker/domain/tight-cab/env-cloud.ply'
+      init_cloud: '/tmp/docker/domain/tight-cab/env-cloud.ply'
+      goal_cloud: '/tmp/docker/domain/tight-cab/env-cloud.ply'
+      has_ceil: true
+      divide_goal: false
+    base_set: ['dgn', 'bench']
+    bench:
+      pose_path: '/input/bench/pose/tight_cab'
+    dgn:
+      data_path: '/input/DGN/bench'
+      pose_path: '/input/DGN/bench/pose/tight_cab'
+    filter_complex: false
+    filter_file: null
+    filter_dims: [0.01, 0.5, 10.0]
+    filter_pose_count: [1, 1000]
+    load_obj_height: true
+    use_scale_dr: false
+    use_table_dim_dr: false
+    use_pre_sampled_pose: true
+    lower_table_pos_bound: [0.08, 0.0]
+    upper_table_pos_bound: [0.08, 0.0]
+    min_table_height_offset: -0.18
+    max_table_height_offset: -0.18
+  franka:
+    height_offset: 0.8
+  task:
+    min_separation_scale: 0
+    avoid_direct_suc: true
+    ws_height: 1.0
+env_name: 'tight_cab'

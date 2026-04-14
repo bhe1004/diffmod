@@ -1,0 +1,37 @@
+# @package _global_
+defaults:
+  - test_domain_base
+env:
+  single_object_scene:
+    mesh_gen:
+      vis_file: '/tmp/docker/domain/flat/flat.obj'
+      col_file: '/tmp/docker/domain/flat/flat-coacd.obj'
+      env_cloud: '/tmp/docker/domain/flat/env_cloud.ply'
+      init_cloud: '/tmp/docker/domain/flat/env_cloud.ply'
+      goal_cloud: '/tmp/docker/domain/flat/env_cloud.ply'
+      has_ceil: false
+      divide_goal: false
+    base_set: ['dgn', 'bench']
+    bench:
+      pose_path: '/input/bench/pose/flat'
+    dgn:
+      data_path: '/input/DGN/bench'
+      pose_path: '/input/DGN/bench/pose/flat'
+    filter_complex: false
+    filter_file: null
+    filter_dims: [0.01, 0.5, 10.0]
+    filter_pose_count: [1, 1000]
+    load_obj_height: true
+    use_scale_dr: false
+    use_pre_sampled_pose: true
+    lower_table_pos_bound: [-0.05, 0.025]
+    upper_table_pos_bound: [-0.05, 0.025]
+    min_table_height_offset: 0.21
+    max_table_height_offset: 0.21
+    use_table_dim_dr: false
+  franka:
+    height_offset: 0.5
+  task:
+    min_separation_scale: 0
+    avoid_direct_suc: true
+env_name: 'flat'

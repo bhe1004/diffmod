@@ -1,0 +1,11 @@
+# @package _global_
+env:
+  single_object_scene:
+    mesh_env: true
+    use_scale_dr: false
+    use_table_dim_dr: false
+    use_table_pos_dr: false
+
+use_tune_domain_sampling: false
+
+env_name: 'test_domain_base'

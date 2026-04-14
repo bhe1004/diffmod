@@ -1,0 +1,14 @@
+# @package _global_
+defaults:
+  - tight_cab
+env:
+  franka:
+    height_offset: 0.3
+  single_object_scene:
+    base_set: ['dgn', 'bench']
+    bench:
+      pose_path: '/input/bench/pose/high_cab'
+    dgn:
+      data_path: '/input/DGN/bench'
+      pose_path: '/input/DGN/bench/pose/high_cab'
+env_name: 'high_cab'

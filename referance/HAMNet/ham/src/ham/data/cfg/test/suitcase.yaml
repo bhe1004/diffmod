@@ -1,0 +1,34 @@
+# @package _global_
+defaults:
+  - test_domain_base
+env:
+  single_object_scene:
+    mesh_gen:
+      vis_file: '/tmp/docker/domain/suitcase/suitcase.obj'
+      col_file: '/tmp/docker/domain/suitcase/suitcase-coacd.obj'
+      env_cloud: '/tmp/docker/domain/suitcase/env_cloud.ply'
+      has_ceil: false
+      divide_goal: false
+    load_obj_height: true
+    use_scale_dr: false
+    use_pre_sampled_pose: true
+    lower_table_pos_bound: [-0.07440927, 0.05139363]
+    upper_table_pos_bound: [-0.07440927, 0.05139363]
+    min_table_height_offset: 0.44585441
+    max_table_height_offset: 0.44585441
+    base_set: ['dgn', 'bench']
+    bench:
+      pose_path: '/input/bench/pose/suitcase'
+    dgn:
+      data_path: '/input/DGN/bench'
+      pose_path: '/input/DGN/bench/pose/suitcase'
+    filter_complex: false
+    filter_file: null
+    filter_dims: [0.01, 0.5, 10.0]
+    filter_pose_count: [1, 1000]
+  franka:
+    height_offset: 0.1
+  task:
+    min_separation_scale: 0
+    avoid_direct_suc: true
+env_name: 'suitcase'
